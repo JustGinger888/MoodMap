@@ -1,2 +1,2 @@
 # MoodMap
-Royal Hackaway Projece
+Royal Hackaway Project
