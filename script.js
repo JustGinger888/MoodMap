@@ -22,19 +22,19 @@ map.addControl(new mapboxgl.NavigationControl());
 
 
 
-//Heatbox
-map.on('load', function() {
+//Heatbox 
+document.getElementById('hap').addEventListener('click', function() {
 
-  map.addSource('tst', {
+  map.addSource('tst1', {
     type: 'geojson',
-    data: 'tst.geojson'
+    data: 'tst1.geojson'
   });
 
   // add heatmap layer here
   map.addLayer({
-    id: 'tst-heat',
+    id: 'tst1-heat',
     type: 'heatmap',
-    source: 'tst',
+    source: 'tst1',
     maxzoom: 15,
     paint: {
       // increase weight as diameter breast height increases
@@ -49,8 +49,8 @@ map.on('load', function() {
       // increase intensity as zoom level increases
       'heatmap-intensity': {
         stops: [
-          [11, 1],
-          [15, 3]
+          [3, 1],
+          [5, 1]
         ]
       },
       // assign color values be applied to points depending on their density
@@ -67,8 +67,8 @@ map.on('load', function() {
       // increase radius as zoom increases
       'heatmap-radius': {
         stops: [
-          [11, 15],
-          [15, 20]
+          [1, 4],
+          [3, 7]
         ]
       },
       // decrease opacity to transition into the circle layer
@@ -84,9 +84,9 @@ map.on('load', function() {
   
   // add circle layer here
   map.addLayer({
-    id: 'tst-point',
+    id: 'tst1-point',
     type: 'circle',
-    source: 'tst',
+    source: 'tst1',
     minzoom: 14,
     paint: {
       // increase the radius of the circle as the zoom level and dbh value increases
@@ -123,8 +123,12 @@ map.on('load', function() {
       }
     }
   }, 'waterway-label');
+});
 
-  map.addSource('tst', {
+//Heatbox 
+document.getElementById('sad').addEventListener('click', function() {
+
+  map.addSource('tst2', {
     type: 'geojson',
     data: 'tst2.geojson'
   });
@@ -148,8 +152,8 @@ map.on('load', function() {
       // increase intensity as zoom level increases
       'heatmap-intensity': {
         stops: [
-          [11, 1],
-          [15, 3]
+          [3, 1],
+          [5, 1]
         ]
       },
       // assign color values be applied to points depending on their density
@@ -157,17 +161,17 @@ map.on('load', function() {
         'interpolate',
         ['linear'],
         ['heatmap-density'],
-        0, 'rgba(151, 17, 17, 1)',
-        0.2, 'rgba(179, 20, 20)',
-        0.4, 'rgba(193, 21, 21)',
-        0.6, 'rgba(230, 25, 25)',
-        0.8, 'rgba(233, 53, 53'
+        0, 'rgba(236,222,239,0)',
+        0.2, 'rgb(208,209,230)',
+        0.4, 'rgb(166,189,219)',
+        0.6, 'rgb(103,169,207)',
+        0.8, 'rgb(28,144,153)'
       ],
       // increase radius as zoom increases
       'heatmap-radius': {
         stops: [
-          [11, 15],
-          [15, 20]
+          [1, 4],
+          [3, 7]
         ]
       },
       // decrease opacity to transition into the circle layer
@@ -223,3 +227,130 @@ map.on('load', function() {
     }
   }, 'waterway-label');
 });
+
+//Heatbox 
+document.getElementById('ang').addEventListener('click', function() {
+
+  map.addSource('tst3', {
+    type: 'geojson',
+    data: 'tst3.geojson'
+  });
+
+  // add heatmap layer here
+  map.addLayer({
+    id: 'tst3-heat',
+    type: 'heatmap',
+    source: 'tst3',
+    maxzoom: 15,
+    paint: {
+      // increase weight as diameter breast height increases
+      'heatmap-weight': {
+        property: 'dbh',
+        type: 'exponential',
+        stops: [
+          [1, 0],
+          [62, 1]
+        ]
+      },
+      // increase intensity as zoom level increases
+      'heatmap-intensity': {
+        stops: [
+          [3, 1],
+          [5, 1]
+        ]
+      },
+      // assign color values be applied to points depending on their density
+      'heatmap-color': [
+        'interpolate',
+        ['linear'],
+        ['heatmap-density'],
+        0, 'rgba(236,222,239,0)',
+        0.2, 'rgb(208,209,230)',
+        0.4, 'rgb(166,189,219)',
+        0.6, 'rgb(103,169,207)',
+        0.8, 'rgb(28,144,153)'
+      ],
+      // increase radius as zoom increases
+      'heatmap-radius': {
+        stops: [
+          [1, 4],
+          [3, 7]
+        ]
+      },
+      // decrease opacity to transition into the circle layer
+      'heatmap-opacity': {
+        default: 1,
+        stops: [
+          [14, 1],
+          [15, 0]
+        ]
+      },
+    }
+  }, 'waterway-label');
+  
+  // add circle layer here
+  map.addLayer({
+    id: 'tst3-point',
+    type: 'circle',
+    source: 'tst3',
+    minzoom: 14,
+    paint: {
+      // increase the radius of the circle as the zoom level and dbh value increases
+      'circle-radius': {
+        property: 'dbh',
+        type: 'exponential',
+        stops: [
+          [{ zoom: 15, value: 1 }, 5],
+          [{ zoom: 15, value: 62 }, 10],
+          [{ zoom: 22, value: 1 }, 20],
+          [{ zoom: 22, value: 62 }, 50],
+        ]
+      },
+      'circle-color': {
+        property: 'dbh',
+        type: 'exponential',
+        stops: [
+          [0, 'rgba(236,222,239,0)'],
+          [10, 'rgb(236,222,239)'],
+          [20, 'rgb(208,209,230)'],
+          [30, 'rgb(166,189,219)'],
+          [40, 'rgb(103,169,207)'],
+          [50, 'rgb(28,144,153)'],
+          [60, 'rgb(1,108,89)']
+        ]
+      },
+      'circle-stroke-color': 'white',
+      'circle-stroke-width': 1,
+      'circle-opacity': {
+        stops: [
+          [14, 0],
+          [15, 1]
+        ]
+      }
+    }
+  }, 'waterway-label');
+});
+
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA_gDRyoovEOadKGzOdN2I55jAvkyu3BWQ",
+  authDomain: "flowing-lead-266910.firebaseapp.com",
+  databaseURL: "https://flowing-lead-266910.firebaseio.com",
+  projectId: "flowing-lead-266910",
+  storageBucket: "flowing-lead-266910.appspot.com",
+  messagingSenderId: "725842439734",
+  appId: "1:725842439734:web:94c8d49a4d639610def297",
+  measurementId: "G-NY4X0QG4WG"
+};
+
+module.exports = firebaseConfig;
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+
+var storage = firebase.storage();
