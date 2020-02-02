@@ -1,0 +1,85 @@
+{"data":
+    [
+        {
+            "created_at":"2018-09-22T11:43:45.000Z",
+            "description":"Second year student at @solentuni, Studying Cyber Security and interested in all things technology based.",
+            "entities":{
+                "description":{
+                    "mentions":
+                    [
+                        {
+                            "start":23,
+                            "end":33,
+                            "username":"solentuni"
+                        }
+                    ]
+                }
+            },
+            "id":"1043465873984573440",
+            "location":"England, United Kingdom",
+            "most_recent_tweet_id":"1189556426911440896",
+            "name":"James Whale",
+            "profile_image_url":"https://pbs.twimg.com/profile_images/1178984954191106048/Vb70bsmV_normal.png",
+            "protected":false,
+            "stats":{
+                "followers_count":35,
+                "following_count":61,
+                "tweet_count":4,
+                "listed_count":0
+            },
+            "url":"",
+            "username":"JamesWhale84",
+            "verified":false,
+            "format":"detailed"
+        },
+        {
+            "geo": {
+                "type": "Point",
+                "coordinates": [
+                    $lon,
+                    $lat
+                ]
+            },
+            "coordinates": {
+                "type": "Point",
+                "coordinates": [
+                    $lat,
+                    $lon
+                ]
+            },
+            "place": {
+                "id": "",
+                "url": "",
+                "place_type": "city",
+                "name": "Egham",
+                "full_name": "Egham, Surrey",
+                "country_code": "UK",
+                "country": "United Kingdom",
+                "bounding_box": {
+                    "type": "Polygon",
+                    "coorinates": [
+                        [
+                            [
+                                49.959999905,
+                                -7.57216793459
+                            ],
+                            [
+                                49.959999905,
+                                1.68153079591
+                            ],
+                            [
+                                58.6350001085,
+                                1.68153079591
+                            ],
+                            [
+                                58.6350001085,
+                                -7.57216793459
+                            ]
+                        ]
+                    ]
+                },
+                "attributes": {
+                }
+            }
+    ]
+}
