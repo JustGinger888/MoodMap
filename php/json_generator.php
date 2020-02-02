@@ -21,12 +21,5 @@ function uk_geo_generator() {
     return $random_location;
 }
 
-function thing() {
-    $test = ("GET api.postcodes.io/postcodes?lon=" . uk_geo_generator($random_longitude) . "&lat=" . uk_geo_generator($random_latitude));
-    return $test;
-}
-
-//echo uk_geo_generator($random_location);
 echo uk_geo_generator();
-//thing();
 ?>
