@@ -13,41 +13,45 @@
       </head>
 
 
-      <body data-gr-c-s-loaded="true">
-        <section class="hero-section">
-          <div class="flex-container w-container">
-            <div>
-              <h1>Title</h1>
-              <p>This <strong>BOLD</strong> statement</p>
-              <a href="#" class="w-button">Button</a>
-              <img src="https://uploads-ssl.webflow.com/5db1c76aadcfe25e881680fa/5db86dc421496616bf357c25_placeholder.svg" alt="placeholder image" class="hero-media">
+      <body>
+          <div class="center">
+            <div id="container">
+            <div class="text-container">
+              <div class="form">
+                <form>
+                  <h1>Title</h1>
+                  <hr>
+                  <input type="text" postcode="Postcode" placeholder="Enter Postcode">
+                  <br>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                  <p>Happiness</p>
+                  <br>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                  <p>Sadness</p>
+                  <br>
+                  <label class="switch">
+                    <p>Anger</p>
+                    <input type="checkbox">
+                    <span class="slider round"></span>                    
+                  </label>
+                  <br>
+                  <input type="submit" value="Submit">
+                </form>
             </div>
           </div>
-        </section>
-        <div id="pricing">
-          <div id="first-price" class="price-container">
-              <h1>Tier 1</h1>
-              <hr>
-              <h2>£10pm</h2>
-              <p class="filler">Just some pointless filler that describes what youll get once you subscribe to my tier 1 content subscription, though I must warn you that any subscription might not be worth the money at this point in time.</p>
-              <input id="Subscribe1" type="submit" value="Subscribe">
+
+          <div class="price-container">
+            <div id="map" class="map map-container"></div>
           </div>
-          <div class="price-spacing"></div>
-          <div id="second-price" class="price-container">
-              <h1>Tier 2</h1>
-              <hr>
-              <h2>£20pm</h2>
-              <p class="filler">Just some pointless filler that describes what youll get once you subscribe to my tier 2 content subscription, though I must warn you that any subscription might not be worth the money at this point in time.</p>
-              <input id="Subscribe2" type="submit" value="Subscribe">
+
           </div>
-          <div class="price-spacing"></div>
-          <div id="third-price" class="price-container">
-              <h1>Tier 3</h1>
-              <hr>
-              <h2>£30pm</h2>
-              <p class="filler">Just some pointless filler that describes what youll get once you subscribe to my tier 3 content subscription, though I must warn you that any subscription might not be worth the money at this point in time.</p>
-              <input id="Subscribe3" type="submit" value="Subscribe">
-          </div>
+        </div>
       </div>
 
 <!--
@@ -55,17 +59,7 @@
           <div class="heading">
             <h1>Menu</h1>
           </div>
-          <div class="form">
-            <form>
-              Postcode:<br>
-              <input type="text" postcode="Postcode" placeholder="enter here">
-              <br>
-              <input type="radio" name="happy" value="happy"> Happy<br>
-              <input type="radio" name="sad" value="sad"> Sad<br>
-              <input type="radio" name="angry" value="angry"> Angry
-              <br>
-              <input type="submit" value="Submit">
-            </form> 
+          
           </div>
           
         </div>
