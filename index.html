@@ -9,7 +9,9 @@
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
         <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
-
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
       </head>
 
 
@@ -19,30 +21,34 @@
             <div class="text-container">
               <div class="form">
                 <form>
-                  <h1>Title</h1>
+                  <h1 style="text-align: center">Mood Map</h1>
                   <hr>
-                  <input type="text" postcode="Postcode" placeholder="Enter Postcode">
+                  <input class="w3-input w3-border" type="text" id="postcode" placeholder="Enter Postcode">
                   <br>
-                  <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                  </label>
+                  <div id="slider-container">
                   <p>Happiness</p>
-                  <br>
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  
+                  <div id="slider-container">
+                    <p>Sadness</p>
                   <label class="switch">
                     <input type="checkbox">
                     <span class="slider round"></span>
                   </label>
-                  <p>Sadness</p>
-                  <br>
-                  <label class="switch">
+                  </div>
+                  <div id="slider-container">
                     <p>Anger</p>
-                    <input type="checkbox">
-                    <span class="slider round"></span>                    
-                  </label>
-                  <br>
-                  <input type="submit" value="Submit">
-                </form>
+                    <label  class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>                    
+                    </label>
+                  </div>
+                </form >
+              <button id="fly" class="button">Submit</button>
             </div>
           </div>
 
